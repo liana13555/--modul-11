@@ -9,6 +9,7 @@ import '../css/common.css';
 
 const NOTIFICATION_DELAY = 3000;
 let timeoutId = null;
+
 const refs = {
   notification: document.querySelector('.js-alert'),
 };

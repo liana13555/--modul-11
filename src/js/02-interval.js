@@ -2,9 +2,10 @@ import '../css/common.css';
 
 /*
  * Метод setInterval(callback, delay, args)
+Вызывает несколько раз.
  */
 
-const logger = time => console.log(`Лог каждые ${time}ms - ${Date.now()}`);
+// const logger = time => console.log(`Лог каждые ${time}ms - ${Date.now()}`);
 
 // console.log('До вызова setInterval');
 // setInterval(logger, 2000, 2000);

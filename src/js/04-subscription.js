@@ -5,6 +5,7 @@ const refs = {
   modal: document.querySelector('#subscription-modal'),
   subscribeBtn: document.querySelector('button[data-subscribe]'),
 };
+
 const PROMPT_DELAY = 3000;
 const MAX_PROMPT_ATTEMPTS = 3;
 let promptCounter = 0;
@@ -33,3 +34,22 @@ function onSubscribeBtnClick() {
   hasSubscribed = true;
   modal.hide();
 }
+
+ //-------------------------------------------
+ // Без интерфейса
+ 
+// const PROMPT_DELAY = 3000;
+// const MAX_PROMPT_ATTEMPTS = 3;
+
+// let promptCounter = 0;
+// let hasSubscribed = false;
+
+// const intervalID = setInterval(() => {
+//   if (promptCounter === MAX_PROMPT_ATTEMPTS || hasSubscribed) {
+//     console.log('Нужно остановить интервал');
+//     clearInterval(intervalID);
+//     return;
+//   }
+//   console.log('Подпишись на рассылку! - ' + Date.now());
+//   promptCounter += 1;
+// }, PROMPT_DELAY);

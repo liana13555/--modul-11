@@ -1,8 +1,14 @@
 import '../css/common.css';
 
 /*
- * Метод window.setTimeout(callback, delay, args)
+ * Метод window.setTimeout(callback, delay, args) 
+Метод setTimeout() позволяет запланировать запуск функции через определённое время.
+Вызывает 1 раз.
  */
+
+// const logMessage = () => {
+//   console.log('Лог при вызове callback-функции через 3 секунды');
+// }
 
 // console.log('До вызова setTimeout');
 
@@ -10,11 +16,14 @@ import '../css/common.css';
 //   console.log('1 - Внутри callback для setTimeout');
 // }, 2000);
 
-// setTimeout(() => {
+// setTimeout((x) => {
+//   console.log(x);
 //   console.log('2 - Внутри callback для setTimeout');
-// }, 1000);
+// }, 1000, 50);
 
 // console.log('После вызова setTimeout');
+
+// Сначала выполняется весь синхронный код, а потом отложенные функкции
 
 /*
  * Очистка таймаута с clearTimeout(timeoutId)
