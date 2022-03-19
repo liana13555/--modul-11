@@ -26,6 +26,7 @@ function onNotificationClick() {
   clearTimeout(timeoutId);
 }
 
+
 function showNotification() {
   refs.notification.classList.add('is-visible');
 

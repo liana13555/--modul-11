@@ -1,7 +1,8 @@
-import '../css/common.css';
+// import '../css/common.css';
 
 /*
  * Метод window.setTimeout(callback, delay, args) 
+
 Метод setTimeout() позволяет запланировать запуск функции через определённое время.
 Вызывает 1 раз.
  */
@@ -23,7 +24,8 @@ import '../css/common.css';
 
 // console.log('После вызова setTimeout');
 
-// Сначала выполняется весь синхронный код, а потом отложенные функкции
+
+/* Сначала выполняется весь синхронный код, а потом отложенные функкции  */
 
 /*
  * Очистка таймаута с clearTimeout(timeoutId)
@@ -33,7 +35,9 @@ const logger = time => {
   console.log(`Лог через ${time}ms, потому что не отменили таймаут`);
 };
 
-const timerId = setTimeout(logger, 2000, 2000);
+// setTimeout(logger, 2000, 2000);
+
+const timerId = setTimeout(logger, 2000, 2000);  // Создание идентификатора таймаута
 
 console.log(timerId);
 

@@ -1,43 +1,61 @@
 import '../css/common.css';
 import BSN from 'bootstrap.native';
 
-const refs = {
-  modal: document.querySelector('#subscription-modal'),
-  subscribeBtn: document.querySelector('button[data-subscribe]'),
-};
-
 const PROMPT_DELAY = 3000;
 const MAX_PROMPT_ATTEMPTS = 3;
 let promptCounter = 0;
 let hasSubscribed = false;
-const modal = new BSN.Modal('#subscription-modal');
 
-openModal();
-
-refs.modal.addEventListener('hide.bs.modal', openModal);
-refs.subscribeBtn.addEventListener('click', onSubscribeBtnClick);
-
-function openModal() {
+const intervalId = setInterval(() => {
   if (promptCounter === MAX_PROMPT_ATTEMPTS || hasSubscribed) {
-    console.log('Максимальное кол-во надоеданий или подписался');
+    console.log('Нужно остановить интервал');
+    clearInterval(intervalId);
     return;
   }
+  console.log('Подпишись на рассылку! - ' + Date.now());
+  promptCounter += 1;
+}, PROMPT_DELAY);
 
-  setTimeout(() => {
-    console.log('Открываем надоедалку');
-    modal.show();
-    promptCounter += 1;
-  }, PROMPT_DELAY);
-}
 
-function onSubscribeBtnClick() {
-  hasSubscribed = true;
-  modal.hide();
-}
+/* Используем библиотеки Bootstrap для разметки и стилей и Bootstrap native для native js */
 
- //-------------------------------------------
- // Без интерфейса
- 
+// const refs = {
+//   modal: document.querySelector('#subscription-modal'),
+//   subscribeBtn: document.querySelector('button[data-subscribe]'),
+// };
+// const PROMPT_DELAY = 1000;
+// const MAX_PROMPT_ATTEMPTS = 3;
+// let promptCounter = 0;
+// let hasSubscribed = false;
+// const modal = new BSN.Modal('#subscription-modal');
+
+// openModal();
+
+// refs.modal.addEventListener('hide.bs.modal', openModal)   // hide.bs.modal - кастомное событие библиотеки
+
+// refs.subscribeBtn.addEventListener('click', onSubscribeBtnClick);
+
+// function openModal() {
+//   if (promptCounter === MAX_PROMPT_ATTEMPTS || hasSubscribed) {
+//     console.log('Максимальное кол-во надоеданий или подписался');
+//     return;
+//   }
+
+//   setTimeout(() => {
+//     console.log('Открываем надоедалку');
+//     modal.show();
+//     promptCounter += 1;
+// }, PROMPT_DELAY);
+// };
+
+// function onSubscribeBtnClick() {
+//   hasSubscribed = true;
+//   modal.hide();
+// };
+
+//-------------------------------------------
+// Без интерфейса
+
 // const PROMPT_DELAY = 3000;
 // const MAX_PROMPT_ATTEMPTS = 3;
 
